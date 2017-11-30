@@ -81,6 +81,12 @@ def main():
     draw_many_squares(turtle, 3, 75, 15)
     turtle3()
 
+    try_methods()
+
+    try_functions()
+
+    try_methods_and_functions()
+
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
 
 
@@ -172,9 +178,14 @@ def try_methods():
       -- backward  100 units
     """
     jeff = rg.SimpleTurtle()
-    jeff.pen = rg.Pen()
+    jeff.pen = rg.Pen('brown', 5)
+
+    jeff.forward(150)
+    jeff.left(90)
+    jeff.forward(50)
+    jeff.backward(100)
     ####################################################################
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).
     ####################################################################
@@ -187,8 +198,11 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
+    jump_and_move_turtle(200,100,300,30)
+    jump_and_move_turtle(100,200,0,0)
+    jump_and_move_turtle(-50,50,100,100)
     ####################################################################
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
@@ -233,8 +247,24 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+    jim = rg.SimpleTurtle()
+    jim.pen = rg.Pen('blue', 5)
+
+    jim.backward(150)
+    jim.speed = 1
+    draw_many_squares(jim, 2, 100, 30)
+    jim.speed = 5
+    jim.pen = rg.Pen('red', 5)
+    draw_many_squares(jim, 10, 50, 15)
+    jim.speed = 100
+    jim.pen = rg.Pen('red', 35)
+    draw_many_squares(jim, 8, 300, 60)
+    jim.pen = rg.Pen('black', 3)
+    jim.backward(200)
+    jim.draw_circle(30)
+    jim.draw_square(50)
     ####################################################################
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!

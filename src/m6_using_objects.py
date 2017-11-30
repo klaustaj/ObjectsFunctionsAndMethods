@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Aaron Klaustermeier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,6 +14,8 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    two_circles()
+    circle_and_rectangle()
 
 
 def two_circles():
@@ -26,8 +28,23 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+
+    circle1_center = rg.Point(300,150)
+    circle1 = rg.Circle(circle1_center, 25)
+    circle1.fill_color = 'green'
+
+    circle2_center = rg.Point(75, 200)
+    circle2 = rg.Circle(circle2_center, 50)
+
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+
+    window.render()
+
+    window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -66,8 +83,37 @@ def circle_and_rectangle():
            75.0
            150.0
     """
+    window = rg.RoseWindow()
+
+    circle_center = rg.Point(350,100)
+    circle = rg.Circle(circle_center, 20)
+    circle.fill_color = 'blue'
+
+    point1 = rg.Point(100,200)
+    point2 = rg.Point(200,250)
+    rectangle = rg.Rectangle(point1,point2)
+
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+
+    print("circle outline thickness:", circle.outline_thickness)
+    print("circle fill color:", circle.fill_color)
+    print("circle center:", circle.center)
+    print("circle center x:", circle_center.x)
+    print("circle center y:", circle_center.y)
+
+    print("rectangle outline thickness:", rectangle.outline_thickness)
+    print("rectangle fill color:", rectangle.fill_color)
+    rect_cent = rectangle.get_center()
+    print("rectangle center:", rect_cent)
+    print("rectangle center x:", rect_cent.x)
+    print("rectangle center y:", rect_cent.y)
+
+
+    window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
