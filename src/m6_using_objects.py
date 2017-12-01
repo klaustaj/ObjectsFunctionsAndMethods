@@ -16,6 +16,7 @@ def main():
     # Test your functions by putting calls to them here:
     two_circles()
     circle_and_rectangle()
+    lines()
 
 
 def two_circles():
@@ -145,8 +146,29 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow()
+
+    endpoint1_1 = rg.Point(0, 0)
+    endpoint1_2 = rg.Point(300, 250)
+    straight = rg.Line(endpoint1_1, endpoint1_2)
+
+    endpoint2_1 = rg.Point(50, 200)
+    endpoint2_2 = rg.Point(200, 200)
+    also_straight = rg.Line(endpoint2_1, endpoint2_2)
+    also_straight.thickness = 5
+
+    mid = also_straight.get_midpoint()
+    print('\nalso_straight midpoint:', mid)
+    print('x coordinate of mid:', mid.x)
+    print('y coordinate of mid:', mid.y)
+
+    straight.attach_to(window)
+    also_straight.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     # ------------------------------------------------------------------
 
 
